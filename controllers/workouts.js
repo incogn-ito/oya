@@ -53,6 +53,31 @@ async function create(req, res) {
     }
   }
 
+  async function edit(req, res) {
+    try {
+      // find movie by id to edit
+      const workout = await Workout.findById(req.params.workoutId)
+      // render edit page
+      res.render('workouts/edit', {
+        workout,
+        title: 'Edit Workout'
+      })
+    } catch (error) {
+      console.log(error)
+      res.redirect('/workouts')
+    }
+  }
+  
+  async function update(req, res) {
+    try {
+      const workout = await Workout.findByIdAndUpdate(req.params.workoutId, req.body, {new: true})
+      res.redirect(`/workouts/${workout._id}`)
+    } catch (error) {
+      console.log(error)
+      res.redirect('/')
+    }
+  }
+
 
 export {
     newWorkout as new,
@@ -60,5 +85,6 @@ export {
     index,
     show,
     deleteWorkout as delete,
-
+    edit,
+    update
 }

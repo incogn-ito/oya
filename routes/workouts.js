@@ -9,8 +9,8 @@ router.get('/', workoutsCtrl.index)
 // GET /workouts/new
 router.get('/new', workoutsCtrl.new)
 
-// // GET localhost:3000/workouts/:workoutId/edit
-// router.get('/:workoutId/edit', workoutsCtrl.edit)
+// GET localhost:3000/workouts/:workoutId/edit
+router.get('/:workoutId/edit', workoutsCtrl.edit)
 
 // GET localhost:3000/workouts/:workoutId
 router.get('/:workoutId', workoutsCtrl.show)
@@ -21,8 +21,8 @@ router.post('/', workoutsCtrl.create)
 // DELETE localhost:3000/workouts/:workoutId
 router.delete('/:workoutId', workoutsCtrl.delete)
 
-// // PUT localhost:3000/workouts/:workoutId
-// router.put('/:workoutId', workoutsCtrl.update)
+// PUT localhost:3000/workouts/:workoutId
+router.put('/:workoutId', workoutsCtrl.update)
 
 export {
 	router
