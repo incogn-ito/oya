@@ -19,6 +19,22 @@
     <div>Duration ⏰ : </div>
     <div><%= workout.duration %> Minutes</div>
   </section>
+  <h2>Comments</h2>
+  <form action="/workouts/<%= workout._id %>/comments" method="POST" id="add-review-form">
+    <label for="content-textarea">Comments:</label>
+    <textarea name="content" id="content-textarea"></textarea>
+    <label for="weather-select">Weather:</label>
+    <select name="weather" id="weather-select">
+        <option value="Sunny">Sunny</option>
+        <option value="Partly Cloudy">Partly Cloudy</option>
+        <option value="Overcast">Overcast</option>
+        <option value="Rainy">Rainy</option>
+        <option value="Snowy">Snowy</option>
+        <option value="Windy">Windy</option>
+    </select>
+    <label for="temperature-input">Temperature (°F):</label>
+    <input type= "number" name="temperature" id="temperature-input"></input>  
+    </form>
 </main>
   
 <%- include('../partials/footer') %>

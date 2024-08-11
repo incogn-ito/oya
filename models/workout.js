@@ -2,7 +2,18 @@ import mongoose from 'mongoose'
 
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema
-	
+
+const commentSchema = new Schema ({
+  content: String,
+  weather: {
+    type: String,
+    enum: ['Sunny', 'Partly Cloudy', 'Overcast', 'Rainy', 'Snowy', 'Windy']
+  },
+  temperature: Number,
+ }, {
+    timestamps: true
+})
+
 const workoutSchema = new Schema({
   workout: {
     type: String,
@@ -10,6 +21,7 @@ const workoutSchema = new Schema({
   },
   caloriesBurned: Number,
   duration: Number,
+  comments: [commentSchema],
   startDate: Date
 }, {
     timestamps: true
