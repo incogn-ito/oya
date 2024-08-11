@@ -8,9 +8,9 @@ const workoutSchema = new Schema({
     type: String,
     enum: ['Run', 'Walk', 'Weights', 'Yoga']
   },
-  duration: Number,
   caloriesBurned: Number,
-  startWorkout: Date
+  duration: Number,
+  startDate: Date
 }, {
     timestamps: true
 }) 

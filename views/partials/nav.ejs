@@ -3,8 +3,15 @@
   <nav>
 		<i class="fas fa-film fa-2x"></i>
     <a 
-      href="/workouts/new" class=<%= title === 'Add Workout' ? 'active' : '' %>
+      href="/workouts/new" 
+      class=<%= title === 'Add Workout' ? 'active' : '' %>
     >
       ADD WORKOUT
+    </a>
+    <a 
+      href="/workouts" 
+      class=<%= title === 'All Workouts' ? 'active' : '' %>
+    >
+      ALL WORKOUTS
     </a>
   </nav>
