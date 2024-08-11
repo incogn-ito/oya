@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/workouts/show.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Workout 💪🏽 : </div>
+    <div>
+      <%= workout.workout %> 
+      <a href="/workouts/<%= workout._id %>/edit">
+        <button>Edit Workout</button>
+      </a>
+    </div>
+    <div>Calories 🔥 : </div>
+    <div><%= workout.caloriesBurned %></div>
+    <div>Workout Date 📅 : </div>
+    <div><%= workout.startDate %></div>
+    <div>Duration ⏰ : </div>
+    <div><%= workout.duration %> Minutes</div>
+  </section>
+</main>
+  
+<%- include('../partials/footer') %>

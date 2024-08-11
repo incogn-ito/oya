@@ -12,8 +12,8 @@ router.get('/new', workoutsCtrl.new)
 // // GET localhost:3000/workouts/:workoutId/edit
 // router.get('/:workoutId/edit', workoutsCtrl.edit)
 
-// // GET localhost:3000/workouts/:workoutId
-// router.get('/:workoutId', workoutsCtrl.show)
+// GET localhost:3000/workouts/:workoutId
+router.get('/:workoutId', workoutsCtrl.show)
 
 // POST /workouts
 router.post('/', workoutsCtrl.create)

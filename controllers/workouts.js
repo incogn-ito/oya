@@ -29,10 +29,26 @@ async function create(req, res) {
     }
   }
 
+  async function show(req, res) {
+    try {
+      const workout = await Workout.findById(req.params.workoutId)
+      console.log(req.params.workoutId)
+      res.render('workouts/show', {
+        workout,
+        title: 'Workout Details'
+      })
+    } catch (error) {
+      console.log(error)
+      res.redirect('/workouts')
+    }
+  }
+
+
 
 export {
     newWorkout as new,
     create,
     index,
+    show,
 
 }
