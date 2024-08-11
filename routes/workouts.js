@@ -18,8 +18,8 @@ router.get('/:workoutId', workoutsCtrl.show)
 // POST /workouts
 router.post('/', workoutsCtrl.create)
 
-// // DELETE localhost:3000/workouts/:workoutId
-// router.delete('/:workoutId', workoutsCtrl.delete)
+// DELETE localhost:3000/workouts/:workoutId
+router.delete('/:workoutId', workoutsCtrl.delete)
 
 // // PUT localhost:3000/workouts/:workoutId
 // router.put('/:workoutId', workoutsCtrl.update)

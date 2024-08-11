@@ -43,6 +43,15 @@ async function create(req, res) {
     }
   }
 
+  async function deleteWorkout(req, res) {
+    try {
+      await Workout.findByIdAndDelete(req.params.workoutId)
+      res.redirect('/workouts')
+    } catch (error) {
+      console.log(error)
+      res.redirect('/workouts')
+    }
+  }
 
 
 export {
@@ -50,5 +59,6 @@ export {
     create,
     index,
     show,
+    deleteWorkout as delete,
 
 }

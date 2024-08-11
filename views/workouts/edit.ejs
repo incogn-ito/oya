@@ -1,0 +1,30 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/workouts/edit.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form 
+    id="new-form" 
+    action="/workouts/<%= workout._id %>?_method=PUT" 
+    method="POST"
+  >
+  <form id="new-form" action="/workouts" method="POST">
+    <label for="workout-select">Workout 💪🏽 :</label>
+     <select name="workout" id="workout-select">
+    <option value="Run">Run</option>
+    <option value="Walk">Walk</option>
+    <option value="Gym">Gym</option>
+    <option value="Yoga">Yoga</option>
+  </select>
+  <label for="caloriesBurned-input">Calories Burned 🔥 : </label>
+  <input type="number" name="caloriesBurned" placeholder="# of Calories" id="caloriesBurned-input">
+  <label for="startDate-input">Workout Date 📅 : </label>
+  <input type="date" name="startDate" placeholder="MM/DD/YY" id="startDate-input">
+  <label for="duration-input">Duration ⏰ : </label>
+  <input type="number" name="duration" placeholder="# of Minutes" id="duration-input">
+  <button type="submit">Save Workout</button>
+</form>
+</main>
+
+<%- include("../partials/footer") %>
