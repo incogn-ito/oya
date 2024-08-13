@@ -77,7 +77,22 @@ async function create(req, res) {
       res.redirect('/')
     }
   }
-
+  
+  async function createComment(req, res) {
+     try {
+      // find workout by ID
+      const workout = await Workout.findById(req.params.workoutId)
+      // create the comment by pushing into comments array
+      workout.comments.push(req.body)
+      // save the workouts document
+      await workout.save()
+      // redirect to the show view
+      res.redirect(`/workouts/${workout._id}`)
+      } catch (error) {
+      console.log(error)
+      res.redirect('/')
+      }
+  }
 
 export {
     newWorkout as new,
@@ -86,5 +101,6 @@ export {
     show,
     deleteWorkout as delete,
     edit,
-    update
+    update,
+    createComment
 }

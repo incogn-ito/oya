@@ -19,10 +19,32 @@
     <div>Duration ⏰ : </div>
     <div><%= workout.duration %> Minutes</div>
   </section>
+  <% if (workout.comments.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Comment</th>
+          <th>Weather</th>
+          <th>Temperature</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% workout.comments.forEach(function(comment) { %>
+          <tr>
+            <td><%= comment.content %></td>
+            <td><%= comment.weather %></td>
+            <td><%= comment.temperature %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Comments Yet</h3>
+  <% } %>
   <h2>Comments</h2>
   <form action="/workouts/<%= workout._id %>/comments" method="POST" id="add-review-form">
     <label for="content-textarea">Comments:</label>
-    <textarea name="content" id="content-textarea"></textarea>
+    <textarea name="content" placeholder= "How was your workout?" id="content-textarea"></textarea>
     <label for="weather-select">Weather:</label>
     <select name="weather" id="weather-select">
         <option value="Sunny">Sunny</option>
@@ -34,6 +56,7 @@
     </select>
     <label for="temperature-input">Temperature (°F):</label>
     <input type= "number" name="temperature" id="temperature-input"></input>  
+    <button type="submit">Add Comment</button>
     </form>
 </main>
   

@@ -22,7 +22,12 @@ const workoutSchema = new Schema({
   caloriesBurned: Number,
   duration: Number,
   comments: [commentSchema],
-  startDate: Date
+  startDate: {
+    type: Date,
+    default: Date.now,
+    get: (date)=> 
+      date.toLocaleString(),
+  }
 }, {
     timestamps: true
 }) 
